@@ -5,7 +5,7 @@ abstract class DBAbstractModel{
 	private static $db_user = 'root';
 	private static $db_pass = '';
 	protected $db_name = 'pruebas';
-	protected $query;
+	protected $query; 
 	protected $rows = array();
 	private $conn;
 	
