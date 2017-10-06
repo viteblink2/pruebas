@@ -1,5 +1,5 @@
 <?php
-abstract class DBAbstractModel{
+abstract class DBAbstractModel{ 
 	
 	private static $db_host = 'localhost';
 	private static $db_user = 'root';
@@ -7,7 +7,7 @@ abstract class DBAbstractModel{
 	protected $db_name = 'pruebas';
 	protected $query; 
 	protected $rows = array();
-	private $conn;
+	private $conn; 
 	
 	# métodos abstractos para ABM de clases que hereden
 	abstract protected function get();
@@ -18,13 +18,12 @@ abstract class DBAbstractModel{
 	# los siguientes métodos pueden definirse con exactitud
 	# y no son abstractos
 	# Conectar a la base de datos
-	private function open_connection() {
-		$this->conn = new mysqli(self::$db_host, self::$db_user,
-		self::$db_pass, $this->db_name);
+	private function open_connection(){
+		$this->conn = new mysqli(self::$db_host, self::$db_user,self::$db_pass, $this->db_name);
 	}
 	
 	# Desconectar la base de datos
-	private function close_connection() {
+	private function close_connection(){
 		$this->conn->close();
 	}
 	
